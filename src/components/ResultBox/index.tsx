@@ -6,24 +6,14 @@ import { useTranslation } from 'react-i18next';
 type ResultBoxProps = {
   originalValue: number;
   taylorValue: number;
-  currencySymbol?: string;
   hasError?: boolean;
   onRetry: () => void;
 };
 
-const formatCurrency = (value: number, currency: string) => {
-  const currencyMap: Record<string, { locale: string; code: string }> = {
-    'R$': { locale: 'pt-BR', code: 'BRL' },
-    'USD': { locale: 'en-US', code: 'USD' },
-    'EUR': { locale: 'de-DE', code: 'EUR' },
-    'GBP': { locale: 'en-GB', code: 'GBP' },
-  };
-
-  const config = currencyMap[currency] || currencyMap['R$'];
-
-  return new Intl.NumberFormat(config.locale, {
+const formatCurrency = (value: number) => {
+  return new Intl.NumberFormat('pt-BR', {
     style: 'currency',
-    currency: config.code,
+    currency: 'BRL',
     maximumFractionDigits: 6,
   }).format(value);
 };
@@ -31,7 +21,6 @@ const formatCurrency = (value: number, currency: string) => {
 const ResultBox = ({
   originalValue,
   taylorValue,
-  currencySymbol = 'R$',
   hasError = false,
   onRetry,
 }: ResultBoxProps) => {
@@ -49,10 +38,10 @@ const ResultBox = ({
   return (
     <div className="result-box">
       <p>
-        🧍 {t('youSpent')} <strong>{formatCurrency(originalValue, currencySymbol)}</strong>
+        🧍 {t('youSpent')} <strong>{formatCurrency(originalValue)}</strong>
       </p>
       <p>
-        👑 {t('taylorSpent')} <strong>{formatCurrency(taylorValue, currencySymbol)}</strong>
+        👑 {t('taylorSpent')} <strong>{formatCurrency(taylorValue)}</strong>
       </p>
     </div>
   );

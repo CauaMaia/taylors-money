@@ -11,8 +11,11 @@ type InputProps = {
 const Input = ({ label, value, onChange, placeholder }: InputProps) => {
   return (
     <div className="input-wrapper">
-      <label className="input-label">{label}</label>
+      <label htmlFor="money-input" className="input-label">
+        {label}
+      </label>
       <input
+        id="money-input"
         className="input-field"
         type="number"
         value={value}

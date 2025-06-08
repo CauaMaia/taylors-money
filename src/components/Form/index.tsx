@@ -15,19 +15,12 @@ const currencyRates: Record<string, number> = {
   gbp: 6.20,
 };
 
-const currencySymbols: Record<string, string> = {
-  brl: 'R$',
-  usd: 'USD',
-  eur: 'EUR',
-  gbp: 'GBP',
-};
-
 const Form = () => {
   const { t } = useTranslation();
 
   const [amount, setAmount] = useState('');
   const [currency, setCurrency] = useState('brl');
-  const [result, setResult] = useState<{ original: number; taylor: number; symbol: string } | null>(null);
+  const [result, setResult] = useState<{ original: number; taylor: number } | null>(null);
   const [error, setError] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -43,7 +36,6 @@ const Form = () => {
       setResult({
         original: valueInBRL,
         taylor: taylorEquivalent,
-        symbol: currencySymbols[currency],
       });
       setError(false);
     } catch {
@@ -87,7 +79,6 @@ const Form = () => {
         <ResultBox
           originalValue={result.original}
           taylorValue={result.taylor}
-          currencySymbol={result.symbol}
           onRetry={resetForm}
         />
       )}
@@ -96,7 +87,6 @@ const Form = () => {
         <ResultBox
           originalValue={0}
           taylorValue={0}
-          currencySymbol=""
           hasError
           onRetry={resetForm}
         />
