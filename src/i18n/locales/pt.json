@@ -1,0 +1,20 @@
+{
+  "title": "💸 Quanto isso custa para a Taylor Swift?",
+  "subtitle": "Descubra quanto o seu gasto representa no mundo de 8,5 bilhões de reais da loirinha.",
+  "inputLabel": "Quanto você gastaria?",
+  "placeholder": "Digite o valor",
+  "selectLabel": "Escolha a moeda",
+  "calculate": "Calcular",
+  "error": "❌ Ocorreu um erro no cálculo. Tente novamente.",
+  "retry": "Tentar novamente",
+  "youSpent": "Você gastaria:",
+  "taylorSpent": "Para a Taylor, isso seria como gastar:",
+  "quickValues": {
+    "phone": "Celular",
+    "car": "Carro",
+    "house": "Casa",
+    "coffee": "Café",
+    "airpods": "AirPods",
+    "trip": "Viagem"
+  }
+}

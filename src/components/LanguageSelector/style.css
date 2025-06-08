@@ -1,0 +1,27 @@
+.language-selector {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.language-selector button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-2);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.language-selector button:hover {
+  background-color: var(--color-5);
+}
+
+.language-selector span {
+  font-weight: 500;
+}

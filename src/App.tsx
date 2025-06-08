@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
+import Form from './components/Form';
+import LanguageSelector from './components/LanguageSelector';
 import './App.css';
+import { useTranslation } from 'react-i18next';
 
-function App() {
+const App = () => {
+  const { t } = useTranslation();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <div className="app-background" />
+
+      <LanguageSelector />
+
+      <h1 className="app-title">{t('title')}</h1>
+      <p className="app-subtitle">{t('subtitle')}</p>
+
+      <Form />
     </div>
   );
-}
+};
 
 export default App;

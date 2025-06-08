@@ -1,0 +1,20 @@
+{
+  "title": "💸 How much does this cost for Taylor Swift?",
+  "subtitle": "Find out what your spending would mean in Taylor's 8.5 billion real world.",
+  "inputLabel": "How much would you spend?",
+  "placeholder": "Enter the amount",
+  "selectLabel": "Choose the currency",
+  "calculate": "Calculate",
+  "error": "❌ An error occurred during calculation. Try again.",
+  "retry": "Try again",
+  "youSpent": "You would spend:",
+  "taylorSpent": "For Taylor, it's like spending:",
+  "quickValues": {
+    "phone": "Phone",
+    "car": "Car",
+    "house": "House",
+    "coffee": "Coffee",
+    "airpods": "AirPods",
+    "trip": "Trip"
+  }
+}
